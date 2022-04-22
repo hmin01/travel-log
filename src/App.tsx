@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+// Component
+import { SPLayout, Section } from './compoenents/SPLayout';
+import { TripPageHeader } from './compoenents/Header';
+import { Hero } from './compoenents/Hero';
+// Styled
+import styled, { createGlobalStyle } from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion'
 
-function App() {
+/** [Styled element] Global style */
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+const App = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <GlobalStyle />
+      {/* <SPLayout>
+        <Section>
+          <TripPageHeader date='2021.11.04.' destination='Jeonju' />
+        </Section>
+      </SPLayout> */}
+      <Hero />
+    </>
+  )
 }
 
 export default App;
